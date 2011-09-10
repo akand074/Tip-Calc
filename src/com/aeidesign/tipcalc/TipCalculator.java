@@ -43,6 +43,7 @@ public class TipCalculator extends Activity {
         
         percentage.setVisibility(3);
         percentage.setViewAdapter(new NumericWheelAdapter(this, 1, 30, "%d%%"));
+        percentage.setCurrentItem(14);
         
         split.setVisibility(3);
         split.setViewAdapter(new NumericWheelAdapter(this, 1, 20));
