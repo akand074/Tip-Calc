@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.aeidesign.tipcalc"
-      android:versionCode="100" android:versionName="1.0.0">
+      android:versionName="1.1.0" android:versionCode="110">
     <uses-sdk android:minSdkVersion="7" />
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
@@ -16,5 +16,6 @@
         </activity>
 		<activity android:name="com.google.ads.AdActivity"
               android:configChanges="keyboard|keyboardHidden|orientation"/>
+		<activity android:name="Settings"></activity>
     </application>
 </manifest>
