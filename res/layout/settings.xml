@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:id="@+id/scrollView1" android:layout_height="fill_parent">
     <LinearLayout android:id="@+id/linearLayout1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical" android:padding="5dip">
-        <TextView android:id="@+id/textView1"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Always round" android:textSize="24dip"></TextView>
+        <TextView android:id="@+id/textView1"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="24dip" android:text="Always round total"></TextView>
     	<RadioGroup android:id="@+id/radioGroup1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dip" android:onClick="modifySettings">
     		<RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="up or down" android:paddingLeft="45dip" android:textSize="20dip" android:id="@+id/rRoundUpDown" android:onClick="modifySettings"></RadioButton>
     		<RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="up" android:paddingLeft="45dip" android:textSize="20dip" android:id="@+id/rRoundUp" android:onClick="modifySettings"></RadioButton>

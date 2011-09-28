@@ -7,6 +7,7 @@ import java.util.Map;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -32,6 +33,7 @@ public class TipCalculator extends Activity {
 	private TextView total;
 	private TextView splitTotal;
 	private TextView tipTotal;
+	private TextView drunkText;
 	
 	private boolean drunkMode;
 	private String genderMode;
@@ -55,6 +57,7 @@ public class TipCalculator extends Activity {
         total = (TextView) findViewById(R.id.total);
         splitTotal = (TextView) findViewById(R.id.split_total);
         tipTotal = (TextView) findViewById(R.id.tip_total);
+        drunkText = (TextView) findViewById(R.id.drunk_text);
         
         percentage.setVisibility(3);
         percentage.setViewAdapter(new NumericWheelAdapter(this, 1, 30, "%d%%"));
@@ -182,6 +185,12 @@ public class TipCalculator extends Activity {
    			Toast.makeText(getApplicationContext(), "Settings saved ...", Toast.LENGTH_SHORT).show();
    			getSavedSettings();
    			createMap();
+   			
+   			if ( genderMode.equals("male") )
+   				findViewById(R.id.lMain).setBackgroundDrawable( getResources().getDrawable(R.drawable.waitress));
+   			else
+   				findViewById(R.id.lMain).setBackgroundDrawable( getResources().getDrawable(R.drawable.waiter));
+   				
    			calculateTip();
    		}
     }
@@ -295,6 +304,6 @@ public class TipCalculator extends Activity {
     	String[] category = tipText.get( textCategory );
     	String displayText= category[ (int) Math.floor(Math.random() * category.length) ];
     	
-    	Toast.makeText(getApplicationContext(), displayText, Toast.LENGTH_SHORT).show();
+    	drunkText.setText(displayText);
     }
 }
