@@ -195,10 +195,15 @@ public class TipCalculator extends Activity {
     	genderMode = settings.getString("gender", "male");
     	drunkMode = settings.getBoolean("drunk", true);
     	
-    	if ( genderMode.equals("male") )
-			findViewById(R.id.lMain).setBackgroundDrawable( getResources().getDrawable(R.drawable.waitress));
-		else
-			findViewById(R.id.lMain).setBackgroundDrawable( getResources().getDrawable(R.drawable.waiter));
+    	if ( drunkMode )
+	    	if ( genderMode.equals("male") )
+				findViewById(R.id.lMain).setBackgroundDrawable( getResources().getDrawable(R.drawable.waitress));
+			else
+				findViewById(R.id.lMain).setBackgroundDrawable( getResources().getDrawable(R.drawable.waiter));
+    	else {
+			findViewById(R.id.lMain).setBackgroundDrawable( getResources().getDrawable(R.drawable.background));
+			drunkText.setText("");
+    	}
     }
     
     private void createMap(){
