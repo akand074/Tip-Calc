@@ -184,13 +184,7 @@ public class TipCalculator extends Activity {
    		if ( resultCode == RESULT_OK){
    			Toast.makeText(getApplicationContext(), "Settings saved ...", Toast.LENGTH_SHORT).show();
    			getSavedSettings();
-   			createMap();
-   			
-   			if ( genderMode.equals("male") )
-   				findViewById(R.id.lMain).setBackgroundDrawable( getResources().getDrawable(R.drawable.waitress));
-   			else
-   				findViewById(R.id.lMain).setBackgroundDrawable( getResources().getDrawable(R.drawable.waiter));
-   				
+   			createMap();   				
    			calculateTip();
    		}
     }
@@ -200,6 +194,11 @@ public class TipCalculator extends Activity {
     	roundMode = settings.getString("round", "updown");
     	genderMode = settings.getString("gender", "male");
     	drunkMode = settings.getBoolean("drunk", true);
+    	
+    	if ( genderMode.equals("male") )
+			findViewById(R.id.lMain).setBackgroundDrawable( getResources().getDrawable(R.drawable.waitress));
+		else
+			findViewById(R.id.lMain).setBackgroundDrawable( getResources().getDrawable(R.drawable.waiter));
     }
     
     private void createMap(){
