@@ -7,7 +7,6 @@ import java.util.Map;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -47,9 +46,6 @@ public class TipCalculator extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        getSavedSettings();
-        createMap();
-        
         percentage = (WheelView) findViewById(R.id.percentage);
         split = (WheelView) findViewById(R.id.split);
         bill = (EditText) findViewById(R.id.bill);
@@ -58,6 +54,9 @@ public class TipCalculator extends Activity {
         splitTotal = (TextView) findViewById(R.id.split_total);
         tipTotal = (TextView) findViewById(R.id.tip_total);
         drunkText = (TextView) findViewById(R.id.drunk_text);
+        
+        getSavedSettings();
+        createMap();
         
         percentage.setVisibility(3);
         percentage.setViewAdapter(new NumericWheelAdapter(this, 1, 30, "%d%%"));
@@ -165,8 +164,6 @@ public class TipCalculator extends Activity {
     
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-    	// TODO Auto-generated method stub
-   	
     	switch (item.getItemId()) {
 		case R.id.settingsMenu:
 	    	Intent settingsIntent = new Intent(this, Settings.class);
@@ -195,12 +192,12 @@ public class TipCalculator extends Activity {
     	genderMode = settings.getString("gender", "male");
     	drunkMode = settings.getBoolean("drunk", true);
     	
-    	if ( drunkMode )
+    	if ( drunkMode ){
 	    	if ( genderMode.equals("male") )
 				findViewById(R.id.lMain).setBackgroundDrawable( getResources().getDrawable(R.drawable.waitress));
 			else
 				findViewById(R.id.lMain).setBackgroundDrawable( getResources().getDrawable(R.drawable.waiter));
-    	else {
+    	} else {
 			findViewById(R.id.lMain).setBackgroundDrawable( getResources().getDrawable(R.drawable.background));
 			drunkText.setText("");
     	}
@@ -276,12 +273,12 @@ public class TipCalculator extends Activity {
 	    	tipText.put("showoff", new String[]{
 	    		"Calm down...you're not that rich!",
 	    		"You better be getting serviced with a tip this big - if you catch my drift!",
-	    		"Are you that drunk?",
+	    		"Are you that drunk? Easy girl!",
 	    		"The waitor is definitely going home with you!",
 	    		"Are you trying to pay the waitor's tuition?",
 	    		"Easy tiger...you're gonna break the bank at this rate.",
 	    		"There goes your male stripper fund, but hopefully the waitor will pick up the stripper's job from here.",
-	    		"Look forward to a hot night with the waitor?"
+	    		"Looking forward to a hot night with the waitor?"
 	    	});
     	}
     }

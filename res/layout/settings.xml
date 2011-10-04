@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:id="@+id/scrollView1" android:layout_height="fill_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:id="@+id/scrollView1" android:layout_height="fill_parent" android:background="@drawable/background">
     <LinearLayout android:id="@+id/linearLayout1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical" android:padding="5dip">
-        <TextView android:id="@+id/textView1"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="24dip" android:text="Always round total"></TextView>
+        <TextView android:id="@+id/textView1"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="24dip" android:text="Always round total" android:textColor="#FFF"></TextView>
     	<RadioGroup android:id="@+id/radioGroup1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dip" android:onClick="modifySettings">
     		<RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="up or down" android:paddingLeft="45dip" android:textSize="20dip" android:id="@+id/rRoundUpDown" android:onClick="modifySettings"></RadioButton>
     		<RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="up" android:paddingLeft="45dip" android:textSize="20dip" android:id="@+id/rRoundUp" android:onClick="modifySettings"></RadioButton>
@@ -9,9 +9,9 @@
     	</RadioGroup>
     	<TableRow android:layout_width="fill_parent" android:id="@+id/tableRow1" android:layout_height="wrap_content" android:layout_marginTop="10dip">
     		<ToggleButton android:text="ToggleButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tbDrunkMode" android:checked="true" android:onClick="modifySettings"></ToggleButton>
-    		<TextView android:id="@+id/textView2" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Drunk mode" android:textSize="24dip" android:layout_gravity="center_vertical" android:layout_marginLeft="5dip"></TextView>
+    		<TextView android:id="@+id/textView2" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Drunk mode" android:textSize="24dip" android:layout_gravity="center_vertical" android:layout_marginLeft="5dip" android:textColor="#FFF"></TextView>
     	</TableRow>
-    	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="24dip" android:id="@+id/TextView01" android:text="Gender" android:layout_marginTop="10dip"></TextView>
+    	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="24dip" android:id="@+id/TextView01" android:text="Gender" android:layout_marginTop="10dip" android:textColor="#FFF"></TextView>
     	<RadioGroup android:layout_marginLeft="10dip" android:layout_width="wrap_content" android:id="@+id/RadioGroup01" android:layout_height="wrap_content">
     		<RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="45dip" android:textSize="20dip" android:checked="true" android:text="male" android:id="@+id/rGenderMale" android:onClick="modifySettings"></RadioButton>
     		<RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="45dip" android:textSize="20dip" android:text="female" android:id="@+id/rGenderFemale" android:onClick="modifySettings"></RadioButton>
